@@ -10,10 +10,16 @@
     <ul>
         @foreach($users as $user)
             <ul>
-                <a href="/user/{{ $user->id }}">{{ $user->name }}</a> <a class="text-danger" href="/user/{{ $user->id }}">Delete</a>
+                <a href="/users/{{ $user->id }}">{{ $user->name }}</a> 
+                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                  @method('DELETE')
+                  @csrf
+                  <button>Delete User</button>
+                </form>
             </ul>
         @endforeach
     </ul>
+    {{ session('status') }}
 </div>
   <script src="{{ asset('js/app.js') }}"></script>
 </body>
