@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::get('users/', 'UserController@index');
 Route::get('user/{id}', 'UserController@show');
+Route::delete('user/{id}', 'UserController@delete');

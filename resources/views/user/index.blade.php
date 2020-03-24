@@ -7,9 +7,13 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-  @foreach($users as user)
-
-  @endforeach
+    <ul>
+        @foreach($users as $user)
+            <ul>
+                <a href="/user/{{ $user->id }}">{{ $user->name }}</a> <a class="text-danger" href="/user/{{ $user->id }}">Delete</a>
+            </ul>
+        @endforeach
+    </ul>
 </div>
   <script src="{{ asset('js/app.js') }}"></script>
 </body>

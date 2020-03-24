@@ -16,4 +16,11 @@ class UserController extends Controller
     {
         return view('user.profile', ['user' => User::findOrFail($id)]);
     }
+
+    public function destroy($id)
+    {
+        $res = User::where('id', $id)->delete()->getID();
+
+        return $res;
+    }
 }
